@@ -36,7 +36,7 @@ def upload_video(video_filename):
         video_filename, 
         "[ {} ] YIGS - Exam showcase - {}".format(
             "ENCRYPTED" if Options.CRYPTOGRAPHY else "PLAIN", 
-            "( {} FPS - {} PIXEL DENSITY - {} )".format(Options.FPS, Options.PIXEL_DENSITY, video_filename)
+            "( {} BS - {} PX DENSITY - {} )".format(Options.DCT_STRENGTH, Options.PIXEL_DENSITY, Options.BLOCK_SIZE, video_filename)
         ), 
         "Only for multimedia project -- testing", 
         [], 
@@ -48,7 +48,7 @@ def upload_video(video_filename):
 def download_video(path, video):
     yt_opts = {
         'verbose': True,
-        'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
+        'format': 'bestvideo[ext=mp4]/best[ext=mp4]/best',
         'outtmpl': path
     }
 
